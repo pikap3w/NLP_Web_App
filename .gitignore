@@ -1,6 +1,9 @@
 # Large data file
 train_model/yelp_academic_dataset_review.json
 
+# Teaching data file
+user_teaching_data.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

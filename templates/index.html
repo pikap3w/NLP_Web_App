@@ -17,22 +17,39 @@
 <body>
 
 <div class="container-fluid">
-    <div class="top-half">
-        <h1>I'm a Natural Language Processing Model</h1>
-        <p class="text-muted">You can teach me how to understand humans. Use the input field below to type a review, feelings, or
-            thoughts, and I'll guess how you're feeling. Feel free to correct me if I make a mistake; I'm still a
-            beginner.</p>
-    </div>
-    <div class="bottom-half">
-        <form class="form-inline row" action="{{ url_for('predict') }}" method="post">
-            <div class="form-group col-10">
+    <div>
+
+        <div class="top-half">
+            <h1>I'm a Natural Language Processing Model</h1>
+            <p class="text-muted">You can teach me how to understand humans. Use the input field below to type a review,
+                feelings, or thoughts, and I'll guess how you're feeling. Feel free to correct me if I make a mistake;
+                I'm still a beginner.</p>
+        </div>
+        <div class="bottom-half">
+            <form class="form-inline row" action="{{ url_for('predict') }}" method="post">
+                <div class="form-group col-10">
                     <textarea class="form-control col-10" rows="3" id="input_text" name="input_text"
                               placeholder="Type something!"></textarea>
-                <div class="col-2">
-                    <button type="submit" class="btn btn-primary btn-lg">Predict</button>
+                    <div class="col-2">
+                        <button type="submit" class="btn btn-primary btn-lg">Predict</button>
+                    </div>
                 </div>
-            </div>
+            </form>
+        </div>
+
+    </div>
+    <div>
+        <div>
+            <img id="pred_img">
+        </div>
+        <form id="save-form" action="{{ url_for('save_pred')}}" method="post">
+            <button type="submit" class="btn btn-success" name="save_type" value="correct">I was correct</button>
+            <button type="submit" class="btn btn-danger" name="save_type" value="incorrect">I was incorrect</button>
         </form>
+    </div>
+
+    <div>
+        <p id="confirmation_text"></p>
     </div>
 
 
